@@ -1,18 +1,21 @@
 let magicians = ["muheeb", "sana", "kashif"];
 
-function show_magicians(magiNames: string[]) {
-  magiNames.forEach((onename) => {
-    console.log(onename);
+function make_great(magicians: string[]): string[] {
+  let greatMagicians = [];
+  magicians.forEach((magician) => {
+    greatMagicians.push(`${magician} the Great`);
+  });
+  return greatMagicians;
+}
+
+function show_magicians(magicians: string[]) {
+  magicians.forEach((magician) => {
+    console.log(magician);
   });
 }
 
-function make_great(magicians) {
-  for (let index = 0; index < magicians.length; index++) {
-    magicians[index] = "the great" + " " + magicians[index];
-  }
-}
-
-make_great(magicians);
-show_magicians(magicians);
-
-// incompleted
+let greatMagicians = make_great(magicians.slice()); // Creates a new modified array
+console.log("Original magicians:");
+show_magicians(magicians); // Shows original names
+console.log("Great magicians:");
+show_magicians(greatMagicians); // Shows modified names
